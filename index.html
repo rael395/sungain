@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sungain - Solar Energy Solutions</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      background-color: #f4f4f4;
+      color: #333;
+    }
+
+    header {
+      background-color: #007BFF;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+
+    section {
+      padding: 40px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+    }
+
+    p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      background-color: #28a745;
+      color: #fff;
+      border: none;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #218838;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Sungain - Your Solar Energy Solution</h1>
+  </header>
+
+  <section>
+    <h1>Switch to Clean, Sustainable Energy</h1>
+    <p>Join Sungain in our mission to provide renewable energy solutions. Harness the power of the sun for a greener future.</p>
+    <button>Contact Us</button>
+  </section>
+
+  <!-- Include your Chatbot component here -->
+  <div id="chat-container"></div>
+  <script defer src="https://openai-widget.web.app/ChatComponent.bundle.js"></script>
+</script>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    // Check if the chat container exists
+    var chatContainer = document.getElementById('chat-container');
+    // If the chat container doesn't exist, create it
+    if (!chatContainer) {
+      chatContainer = document.createElement('div');
+      chatContainer.id = 'chat-container';
+      document.body.appendChild(chatContainer);
+    }
+    // Initialize the Chat component
+    if (window.ChatComponent) {
+      ChatComponent.init('AqQlRmj27cFjCLP3MG2W','#chat-container')
+    } else {
+      console.error('ChatComponent is not available');
+    }
+  })
+</script>
+</body>
+</html>
