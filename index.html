@@ -68,25 +68,34 @@
     <script defer src="https://openai-widget.web.app/ChatComponent.bundle.js"></script>
     
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        // Check if the chat container exists
-        var chatContainer = document.getElementById('chat-container');
-        // If the chat container doesn't exist, create it
-        if (!chatContainer) {
-          chatContainer = document.createElement('div');
-          chatContainer.id = 'chat-container';
-          document.body.appendChild(chatContainer);
-        }
+    function toggleChat() {
+      var chatContainer = document.getElementById('chat-container');
+      
+      // If the chat container doesn't exist, create it
+      if (!chatContainer) {
+        chatContainer = document.createElement('div');
+        chatContainer.id = 'chat-container';
+        document.body.appendChild(chatContainer);
+
         // Initialize the Chat component
         if (window.ChatComponent) {
-          ChatComponent.init('AqQlRmj27cFjCLP3MG2W','#chat-container');
-          // Open the chat widget
-        window.ChatComponent.open();
-      } else {
-        console.error('ChatComponent is not available');
+          window.ChatComponent.init('AqQlRmj27cFjCLP3MG2W', '#chat-container');
+        } else {
+          console.error('ChatComponent is not available');
         }
-      })
-    </script>
+      }
+
+      // Toggle the visibility of the chat container
+      if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
+        chatContainer.style.display = 'block';
+      } else {
+        chatContainer.style.display = 'none';
+      }
+    }
+
+    // Automatically toggle the chat on page load
+    document.addEventListener('DOMContentLoaded', toggleChat);
+  </script>
   </div>
   
 
