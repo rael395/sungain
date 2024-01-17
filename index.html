@@ -64,10 +64,11 @@
   </section>
 
   <!-- Include your Chatbot component here -->
-  <div id="chat-container">
-    <script defer src="https://openai-widget.web.app/ChatComponent.bundle.js"></script>
-    
-    <script>
+  <div id="chat-container" style="display: none;"></div>
+  <script defer src="https://openai-widget.web.app/ChatComponent.bundle.js"></script>
+
+  <!-- Script to toggle the chat widget -->
+  <script>
     function toggleChat() {
       var chatContainer = document.getElementById('chat-container');
       
@@ -86,16 +87,13 @@
       }
 
       // Toggle the visibility of the chat container
-      if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
-        chatContainer.style.display = 'block';
-      } else {
-        chatContainer.style.display = 'none';
-      }
+      chatContainer.style.display = chatContainer.style.display === 'none' ? 'block' : 'none';
     }
 
     // Automatically toggle the chat on page load
     document.addEventListener('DOMContentLoaded', toggleChat);
   </script>
+
   </div>
   
 
