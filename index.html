@@ -79,9 +79,11 @@
         }
         // Initialize the Chat component
         if (window.ChatComponent) {
-          ChatComponent.init('AqQlRmj27cFjCLP3MG2W','#chat-container')
-        } else {
-          console.error('ChatComponent is not available');
+          ChatComponent.init('AqQlRmj27cFjCLP3MG2W','#chat-container');
+          // Open the chat widget
+        window.ChatComponent.open();
+      } else {
+        console.error('ChatComponent is not available');
         }
       })
     </script>
