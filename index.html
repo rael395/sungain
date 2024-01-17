@@ -64,10 +64,9 @@
   </section>
 
   <!-- Include your Chatbot component here -->
-  <div id="chat-container"></div>
+  <div id="chat-container">
   <script defer src="https://openai-widget.web.app/ChatComponent.bundle.js"></script>
-
-  <!-- Script to automatically open the chat widget after a delay -->
+     <!-- Script to automatically open the chat widget after a delay -->
   <script>
     document.addEventListener('DOMContentLoaded', function() {
       var chatContainer = document.getElementById('chat-container');
@@ -94,6 +93,10 @@
       }, 5000); // Adjust the timeout value as needed
     });
   </script>
+  </div>
+ 
+
+ 
 
 </body>
 </html>
