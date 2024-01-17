@@ -67,7 +67,7 @@
   <div id="chat-container">
     <script defer src="https://openai-widget.web.app/ChatComponent.bundle.js"></script>
     <script>
-      document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function() {
         var chatContainer = document.getElementById('chat-container');
         if (!chatContainer) {
           chatContainer = document.createElement('div');
@@ -75,13 +75,15 @@
           document.body.appendChild(chatContainer);
         }
         if (window.ChatComponent) {
-          ChatComponent.init('NbvWo6z8DMzt2D9OEZPI','#chat-container');
-          
-          // Simulate a click on the chat icon to open the chatbot
-          var chatIcon = document.querySelector('.MuiBox-root css-1wq8uym'); // Replace with the actual selector for your chat icon
-          if (chatIcon) {
-            chatIcon.click();
-          }
+          ChatComponent.init('NbvWo6z8DMzt2D9OEZPI', '#chat-container');
+      
+          // Introduce a delay of 5000 milliseconds (5 seconds) before simulating the click
+          setTimeout(function() {
+            var chatIcon = document.querySelector('.MuiBox-root css-1wq8uym'); // Replace with the actual selector for your chat icon
+            if (chatIcon) {
+              chatIcon.click();
+            }
+          }, 5000);
         } else {
           console.error('ChatComponent is not available');
         }
