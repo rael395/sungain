@@ -64,14 +64,14 @@
   </section>
 
   <!-- Include your Chatbot component here -->
-  <div id="chat-container" style="display: none;"></div>
+  <div id="chat-container"></div>
   <script defer src="https://openai-widget.web.app/ChatComponent.bundle.js"></script>
 
-  <!-- Script to toggle the chat widget -->
+  <!-- Script to automatically open the chat widget after a delay -->
   <script>
-    function toggleChat() {
+    document.addEventListener('DOMContentLoaded', function() {
       var chatContainer = document.getElementById('chat-container');
-      
+
       // If the chat container doesn't exist, create it
       if (!chatContainer) {
         chatContainer = document.createElement('div');
@@ -86,16 +86,14 @@
         }
       }
 
-      // Toggle the visibility of the chat container
-      chatContainer.style.display = chatContainer.style.display === 'none' ? 'block' : 'none';
-    }
-
-    // Automatically toggle the chat on page load
-    document.addEventListener('DOMContentLoaded', toggleChat);
+      // Automatically open the chat after 5 seconds (adjust as needed)
+      setTimeout(function() {
+        if (chatContainer.style.display === 'none' || chatContainer.style.display === '') {
+          chatContainer.style.display = 'block';
+        }
+      }, 5000); // Adjust the timeout value as needed
+    });
   </script>
-
-  </div>
-  
 
 </body>
 </html>
